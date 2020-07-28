@@ -1,0 +1,96 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default" >
+        <action name="LoginAction" class="nguyennst.action.LoginAction">
+            <result name="employee" type="redirect">employee</result>
+            <result name="leader" type="redirect">leader</result>
+            <result name="manager" type="redirect">manager</result>
+            <result name="fail">login.jsp</result>
+        </action>
+        <action name="CreateAccountAction" class="nguyennst.action.CreateAccountAction">
+            <result name="confirm_email">confirmEmail.jsp</result>
+            <result name="fail" type="redirect">create.jsp</result>
+            <result name="input">create.jsp</result>
+        </action>
+        <action name="LogoutAction" class="nguyennst.action.LogoutAction" > 
+            <result name="success" type="redirect">login.jsp</result>
+        </action>
+        <action name="LoginGoogleAction" class="nguyennst.action.LoginGoogleAction"> 
+            <result name="fail">login.jsp</result>
+            <result name="success" type="redirect">employee</result>
+        </action>
+        <action name="ConfirmEmailAction" class="nguyennst.action.ConfirmEmailAction">
+            <result name="success" type="redirect">employee</result>
+            <result name="input">confirmEmail.jsp</result> 
+        </action>
+        <action name="EmployeeSearchAction" class="nguyennst.action.EmployeeSearchAction">
+            <result name="success">employee.jsp</result>
+            <result name="input">employee.jsp</result>
+        </action>
+        <action name="EmployeeRentAction" class="nguyennst.action.EmployeeRentAction">
+            <result name="success">EmployeeSearchAction</result>
+        </action>
+        <action name="EmployeeUpdateAction" class="nguyennst.action.EmployeeUpdateAction">
+            <result name="success">employeeViewResource.jsp</result>
+            <result name="input">employeeViewResource.jsp</result>
+        </action>
+        <action name="EmployeeDeleteAction" class="nguyennst.action.EmployeeDeleteAction">
+            <result name="success">employeeViewResource.jsp</result>
+            <result name="input">employeeViewResource.jsp</result>
+        </action>
+        <action name="EmployeeConfirmAction" class="nguyennst.action.EmployeeConfirmAction">
+            <result name="success" type="redirect">employee</result>
+            <result name="fail">employeeViewResource.jsp</result>
+        </action>
+        <action name="LeaderSearchAction" class="nguyennst.action.LeaderSearchAction">
+            <result name="success">leader.jsp</result>
+            <result name="input">leader.jsp</result>
+        </action>
+        <action name="LeaderRentAction" class="nguyennst.action.LeaderRentAction">
+            <result name="success">LeaderSearchAction</result>
+        </action>
+        <action name="LeaderUpdateAction" class="nguyennst.action.LeaderUpdateAction">
+            <result name="success">leaderViewResource.jsp</result>
+            <result name="input">leaderViewResource.jsp</result>
+        </action>
+        <action name="LeaderDeleteAction" class="nguyennst.action.LeaderDeleteAction">
+            <result name="success">leaderViewResource.jsp</result>
+            <result name="input">leaderViewResource.jsp</result>
+        </action>
+        <action name="LeaderConfirmAction" class="nguyennst.action.LeaderConfirmAction">
+            <result name="success" type="redirect">leader</result>
+            <result name="fail">leaderViewResource.jsp</result>
+        </action>
+        <action name="ManagerSearchAction" class="nguyennst.action.ManagerSearchAction">
+            <result name="success">manager.jsp</result>
+        </action>
+        <action name="ManagerApprovalAction" class="nguyennst.action.ManagerApprovalAction">
+            <result name="success">ManagerSearchAction</result>
+        </action>
+        <action name="ManagerDeleteAction" class="nguyennst.action.ManagerDeleteAction">
+            <result name="success">ManagerSearchAction</result>
+        </action>
+        <action name="EmployeeViewHistoryAction" class="nguyennst.action.EmployeeViewHistoryAction">
+            <result name="success">employeeViewHistory.jsp</result>
+        </action>
+        <action name="EmployeeSearchHistoryAction" class="nguyennst.action.EmployeeSearchHistoryAction">
+            <result name="success">employeeViewHistory.jsp</result>
+        </action>
+        <action name="EmployeeDeleteRequestAction" class="nguyennst.action.EmployeeDeleteRequestAction">
+            <result name="success">EmployeeSearchHistoryAction</result>
+        </action>
+        <action name="LeaderViewHistoryAction" class="nguyennst.action.LeaderViewHistoryAction">
+            <result name="success">leaderViewHistory.jsp</result>
+        </action>
+        <action name="LeaderSearchHistoryAction" class="nguyennst.action.LeaderSearchHistoryAction">
+            <result name="success">leaderViewHistory.jsp</result>
+        </action>
+        <action name="LeaderDeleteRequestAction" class="nguyennst.action.LeaderDeleteRequestAction">
+            <result name="success">LeaderSearchHistoryAction</result>
+        </action>
+    </package>
+</struts>
